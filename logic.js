@@ -163,7 +163,7 @@ const commonStats = [
 ]
 
 const getClosest = (stats, randCount, common = true) => {
-	const rand = random(0, common ? 16 : 101, randCount)
+	const rand = random(0, common ? 16 : 65, randCount)
 
 	let closestNameUp = ''
 	let closestNameDown = ''
