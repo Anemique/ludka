@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="ludka.css">
+    <script src="./logic.js"></script>
+    <title>Лудим</title>
+</head>
+<body>
+    <div class="content">
+        <div class="ludka">
+            <div class="ludkaContainer">
+                <div class="left">
+                    <div class="circle">
+                        <img class="flame" src="./flame.gif">
+                    </div>
+                    <div class="gunStats">
+                        <div class="uniqueCurrent">Показатель атаки +20</div>
+                        <div class="firstCurrent">Максимальная физическая атака +106</div>
+                        <div class="secondCurrent">Пауза между атаками -0.05 сек</div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="circle end">
+                        <img class="flame" src="./flame.gif">
+                    </div>
+                    <div class="gunStats New">
+                        <div class="uniqueNew">-</div>
+                        <div class="firstNew">-</div>
+                        <div class="secondNew">-</div>
+                    </div>
+                </div>
+            </div>
+            <div class="ludkaButtons">
+                <div class="save button">Сохранить</div>
+                <div class="repeat button">Лудить</div>
+                <div class="change button">Изменить</div>
+            </div>
+            <div class="line"></div>
+            <div class="buttom">
+                <div class="prices">
+                    <div class="chud">
+                        <div class="chudTitle">Цена чудика:</div>
+                        <input type="text" class="chudPrice" value="2200000">
+                    </div>
+                    <div class="mir">
+                        <div class="mirTitle">Цена мирозданки:</div>
+                        <input type="text" class="mirPrice" value="469000">
+                    </div>
+                </div>
+                <div class="horLine"></div>
+                <div class="counter">
+                    <div class="count">Число лудок: <span class="currentCount">0</span></div>
+                    <div class="count">Денег потрачено: <span class="entirePrice">0</span></div>
+                    <div class="clear button">Сбросить</div>
+                </div>
+            </div>
+        </div>
+        <div class="params">
+            <div class="commonStats">
+                <div class="StatsTilte">Возможные дополнения:</div>
+                <div class="stats">
+                    <div class="stat">Максимальная физическая атака +106 - <div class="percent">5%</div></div>
+                    <div class="stat">Максимальная физическая атака +130 - <div class="percent">5%</div></div>
+                    <div class="stat">Пауза между атаками -0.05 сек - <div class="percent">5%</div></div>
+                    <div class="stat">Дальность +1 - <div class="percent">9%</div></div>
+                    <div class="stat">Здоровье +350 - <div class="percent">10%</div></div>
+                    <div class="stat">Сила +18~19 - <div class="percent">10%</div></div>
+                    <div class="stat">Ловкость +18~19 - <div class="percent">10%</div></div>
+                    <div class="stat">Интеллект +18~19 - <div class="percent">10%</div></div>
+                    <div class="stat">Выносливость +18~19 - <div class="percent">10%</div></div>
+                    <div class="stat">Вероятность критического удара +1% - <div class="percent">9.5%</div></div>
+                    <div class="stat">Вероятность критического удара +2% - <div class="percent">0.5%</div></div>
+                    <div class="stat">Меткость +30% - <div class="percent">4%</div></div>
+                    <div class="stat">Показатель атаки +1 - <div class="percent">9%</div></div>
+                    <div class="stat">Показатель атаки +2 - <div class="percent">1%</div></div>
+                    <div class="stat">Показатель атаки +3 - <div class="percent">1%</div></div>
+                    <div class="stat">Показатель защиты +2 - <div class="percent">1%</div></div>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="uniqueStats">
+                <div class="StatsTilte">Уникальный параметр:</div>
+                <div class="stats">
+                    <div class="stat">Вероятность критического удара +3% - <div class="percent">46.5%</div></div>
+                    <div class="stat">Вероятность критического удара +4% - <div class="percent">2.5%</div></div>
+                    <div class="stat">Жестокий воин: определенный шанс нанести двойной урон,
+                        теряя при этом 5% от вашего максимального запаса здоровья. - <div class="percent">46.5%</div></div>
+                    <div class="stat">Яростный бог войны: с высокой вероятностью позволяет нанести противнику
+                        двойной урон ценой 5% максимального запаса здоровья. - <div class="percent">2.5%</div></div>
+                    <div class="stat">Показатель атаки +20 - <div class="percent">2%</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,112 @@
+.ludka {
+    padding: 30px;
+}
+
+.ludkaContainer {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 100px;
+    height: 300px;
+}
+
+.right, .left {
+    display: grid;
+    flex-direction: column;
+    width: 50%;
+}
+
+.circle {
+    justify-self: center;
+}
+
+.circle {
+    width: 150px;
+    height: 150px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 9999px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flame {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+}
+
+.save {
+    opacity: 0;
+}
+
+.gunStats {
+    margin-top: 30px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+}
+
+.ludkaButtons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 110px;
+    font-size: 16px;
+    padding: 4px 8px;
+    border-radius: 30px;
+    background: #7597de;
+    transition: background 0.3s;
+}
+
+.button:hover {
+    background: white;
+}
+
+.buttom {
+    display: flex;
+}
+
+.prices {
+    color: white;
+    font-size: 16px;
+    display: flex;
+    column-gap: 15px;
+}
+
+input {
+    border-radius: 30px;
+    padding: 5px;
+    border: unset;
+    outline: unset;
+    margin-top: 5px;
+}
+
+.horLine {
+    margin: 0 40px;
+    height: 150px;
+    width: 1px;
+    min-width: 1px;
+    background: white;
+}
+
+.counter {
+    color: white;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+.clear {
+    color: black;
+    max-width: 200px;
+}
