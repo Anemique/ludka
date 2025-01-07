@@ -163,14 +163,16 @@ const commonStats = [
 ]
 
 const getClosest = (stats, randCount, common = true) => {
-	const rand = random(0, common ? 16 : 65, randCount)
+	let dop = 101
+	let comm = 31
+	const rand = random(0, common ? comm : dop, randCount)
 
 	let closestNameUp = ''
 	let closestNameDown = ''
-	let closestChanceUp = 100
+	let closestChanceUp = 0
 	let closestRealChanceUp = 0
-	let closestChanceDown = 100
-	let closestRealChanceDown = 0
+	let closestChanceDown = dop
+	let closestRealChanceDown = dop
 	let upEqual = []
 	let downEqual = []
 
@@ -195,7 +197,7 @@ const getClosest = (stats, randCount, common = true) => {
 		if(rand - e.chance > 0 && rand - e.chance < closestChanceDown) {
 			closestNameDown = e.name
 			closestChanceDown = rand - e.chance
-			closestRealChanceDown.chance
+			closestRealChanceDown = e.chance
 		}
 		
 		if(closestRealChanceDown == e.chance) {
@@ -204,11 +206,11 @@ const getClosest = (stats, randCount, common = true) => {
 	})
 
 	if(downEqual.length > 1) {
-		const upRand = random(0, downEqual.length - 1, 3, false)
-		closestNameUp = downEqual[upRand]
+		const downRand = random(0, downEqual.length - 1, 4, false)
+		closestNameUp = downEqual[downRand]
 	}
 
-	return closestChanceUp < closestChanceDown ? closestNameUp : closestNameDown
+	return closestNameUp > closestNameDown ? closestNameUp : closestNameDown
 }
 
 function random(min, max, randCount, isFixed = true) {
