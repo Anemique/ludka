@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
 	const currentStats = {
-		unique: 'Показатель атаки +20',
-		first: 'Пауза между атаками -0.05 сек',
-		second: 'Максимальная физическая атака +106',
+		unique: 'Вероятность критического удара +3%',
+		first: 'Вероятность критического удара +1%',
+		second: 'Вероятность критического удара +1%',
 	}
 
 	let ludCount = 0
@@ -91,7 +91,7 @@ const uniqueStats = [
 	},
 	{
 		'name': 'Показатель атаки +20',
-		'chance': 2
+		'chance': 2.5
 	},
 ]
 
@@ -164,7 +164,7 @@ const commonStats = [
 
 const getClosest = (stats, randCount, common = true) => {
 	let dop = 101
-	let comm = 31
+	let comm = 21
 	const rand = random(0, common ? comm : dop, randCount)
 
 	let closestNameUp = ''
@@ -182,7 +182,9 @@ const getClosest = (stats, randCount, common = true) => {
 			closestChanceUp = e.chance - rand
 			closestRealChanceUp = e.chance
 		}
+	})
 
+	stats.forEach(e => {
 		if(closestRealChanceUp == e.chance) {
 			upEqual.push(e.name)
 		}
@@ -199,14 +201,16 @@ const getClosest = (stats, randCount, common = true) => {
 			closestChanceDown = rand - e.chance
 			closestRealChanceDown = e.chance
 		}
-		
+	})
+
+	stats.forEach(e => {
 		if(closestRealChanceDown == e.chance) {
 			downEqual.push(e.name)
 		}
 	})
 
 	if(downEqual.length > 1) {
-		const downRand = random(0, downEqual.length - 1, 4, false)
+		const downRand = random(0, downEqual.length - 1, 8, false)
 		closestNameUp = downEqual[downRand]
 	}
 
