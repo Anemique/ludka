@@ -63,11 +63,14 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 const ludka = () => {
-	const unique = getClosest(uniqueStats, 4, false)
+	const unique = getClosest(uniqueStats, 2, false)
 
-	const first = getClosest(commonStats, 3)
+	const first = getClosest(commonStats, 1)
 
-	const second = getClosest(commonStats, 6)
+	let second = getClosest(commonStats, 3)
+
+	if(second == first)
+		second = getClosest(commonStats, 4)
 
 	return {unique, first, second}
 }
@@ -91,7 +94,7 @@ const uniqueStats = [
 	},
 	{
 		'name': 'Показатель атаки +20',
-		'chance': 2.5
+		'chance': 2
 	},
 ]
 
@@ -163,13 +166,13 @@ const commonStats = [
 ]
 
 const getClosest = (stats, randCount, common = true) => {
-	let dop = 101
+	let dop = 47.5
 	let comm = 21
 	const rand = random(0, common ? comm : dop, randCount)
 
 	let closestNameUp = ''
 	let closestNameDown = ''
-	let closestChanceUp = 0
+	let closestChanceUp = 46.5
 	let closestRealChanceUp = 0
 	let closestChanceDown = dop
 	let closestRealChanceDown = dop
@@ -177,7 +180,7 @@ const getClosest = (stats, randCount, common = true) => {
 	let downEqual = []
 
 	stats.forEach(e => {
-		if(e.chance - rand > 0 && e.chance - rand < closestChanceUp) {
+		if(e.chance - rand > -1 && e.chance - rand < closestChanceUp) {
 			closestNameUp = e.name
 			closestChanceUp = e.chance - rand
 			closestRealChanceUp = e.chance
@@ -185,36 +188,40 @@ const getClosest = (stats, randCount, common = true) => {
 	})
 
 	stats.forEach(e => {
-		if(closestRealChanceUp == e.chance) {
+		if(closestRealChanceUp == e.chance && !upEqual.includes(e.name)) {
 			upEqual.push(e.name)
 		}
 	})
 
 	if(upEqual.length > 1) {
-		const upRand = random(0, upEqual.length - 1, 3, false)
+		const upRand = random(0, upEqual.length, 2, false)
 		closestNameUp = upEqual[upRand]
 	}
 
-	stats.forEach(e => {
-		if(rand - e.chance > 0 && rand - e.chance < closestChanceDown) {
-			closestNameDown = e.name
-			closestChanceDown = rand - e.chance
-			closestRealChanceDown = e.chance
-		}
-	})
+	if(common) {
+		stats.forEach(e => {
+			if(rand - e.chance > 0 && rand - e.chance < closestChanceDown) {
+				closestNameDown = e.name
+				closestChanceDown = rand - e.chance
+				closestRealChanceDown = e.chance
+			}
+		})
 
-	stats.forEach(e => {
-		if(closestRealChanceDown == e.chance) {
-			downEqual.push(e.name)
-		}
-	})
+		stats.forEach(e => {
+			if(closestRealChanceDown == e.chance && closestNameDown != e.name) {
+				downEqual.push(e.name)
+			}
+		})
 
-	if(downEqual.length > 1) {
-		const downRand = random(0, downEqual.length - 1, 8, false)
-		closestNameUp = downEqual[downRand]
+		if(downEqual.length > 1) {
+			const downRand = random(0, downEqual.length, 8, false)
+			closestNameDown = downEqual[downRand]
+		}
+
+		return closestChanceDown < closestChanceUp ? closestNameDown: closestNameUp
 	}
 
-	return closestNameUp > closestNameDown ? closestNameUp : closestNameDown
+	return closestNameUp
 }
 
 function random(min, max, randCount, isFixed = true) {
@@ -230,5 +237,5 @@ function random(min, max, randCount, isFixed = true) {
 	if(isFixed)
 		return (min + adjustedRandomValue * (max - min)).toFixed(1)
 	else 
-		return (min + adjustedRandomValue * (max - min)).toFixed(0)
+		return Math. floor(min + adjustedRandomValue * (max - min))
 }
