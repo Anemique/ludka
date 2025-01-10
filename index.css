@@ -1,51 +1,66 @@
 body {
-    font-family: Arial, Narrow, sans-serif;
-    background: #7597de;
-    font-size: 14px;
+	font-family: Arial, Narrow, sans-serif;
+	background: #7597de;
+	font-size: 14px;
 }
 
 .content {
-    display: flex;
-    column-gap: 15px;
+	display: flex;
+	flex-direction: column;
+	column-gap: 15px;
+	row-gap: 15px;
 }
 
 .ludka {
-    width: 50%;
-    background: #19385c;
+	background: #19385c;
 }
 
 .params {
-    width: 50%;
-    background: #19385c;
-    padding: 30px;
+	background: #19385c;
+	padding: 30px;
 }
 
 .line {
-    width: 100%;
-    background: white;
-    height: 1px;
-    margin: 20px 0;
+	width: 100%;
+	background: white;
+	height: 1px;
+	margin: 20px 0;
 }
 
 .stats {
-    padding-left: 15px;
-    display: flex;
-    flex-direction: column;
-    row-gap: 5px;
+	padding-left: 15px;
+	display: flex;
+	flex-direction: column;
+	row-gap: 8px;
 }
 
 .percent {
-    color: orange;
-    display: inline;
-    font-weight: 600;
+	color: orange;
+	display: inline;
+	font-weight: 600;
 }
 
-.stat, .StatsTilte {
-    color: white;
+.stat,
+.StatsTilte {
+	color: white;
 }
 
 .StatsTilte {
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 10px;
+	font-size: 16px;
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+
+@media screen and (min-width: 1280px) {
+	.content {
+		flex-direction: row;
+	}
+
+	.ludka {
+		width: 50%;
+	}
+
+	.params {
+		width: 50%;
+	}
 }
