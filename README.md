@@ -1,2 +1,0 @@
-# ludka
-ludka pw
