@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ludka/static/css/main.d29aa848.css",
-    "main.js": "/ludka/static/js/main.360263c1.js",
+    "main.css": "/ludka/static/css/main.a5157b4a.css",
+    "main.js": "/ludka/static/js/main.26ad212d.js",
     "static/media/nirvana.png": "/ludka/static/media/nirvana.f84cfa7d61e5faa94495.png",
     "static/media/r8.jpg": "/ludka/static/media/r8.96f4b6d04357878c3023.jpg",
     "static/media/flame.gif": "/ludka/static/media/flame.33bb8cb395d097678eec.gif",
@@ -16,11 +16,11 @@
     "static/media/press-start-2p-cyrillic-ext-400-normal.woff": "/ludka/static/media/press-start-2p-cyrillic-ext-400-normal.d6e8f891ba8acb97894d.woff",
     "static/media/press-start-2p-greek-400-normal.woff": "/ludka/static/media/press-start-2p-greek-400-normal.a2a5944f91d5da4fd2b8.woff",
     "index.html": "/ludka/index.html",
-    "main.d29aa848.css.map": "/ludka/static/css/main.d29aa848.css.map",
-    "main.360263c1.js.map": "/ludka/static/js/main.360263c1.js.map"
+    "main.a5157b4a.css.map": "/ludka/static/css/main.a5157b4a.css.map",
+    "main.26ad212d.js.map": "/ludka/static/js/main.26ad212d.js.map"
   },
   "entrypoints": [
-    "static/css/main.d29aa848.css",
-    "static/js/main.360263c1.js"
+    "static/css/main.a5157b4a.css",
+    "static/js/main.26ad212d.js"
   ]
 }
